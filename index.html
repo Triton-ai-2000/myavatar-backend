@@ -51,7 +51,10 @@
 <p class="p1"><span class="Apple-converted-space">            </span>let formData = new FormData();</p>
 <p class="p1"><span class="Apple-converted-space">            </span>formData.append("audio", audioBlob);</p>
 <p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let response = await fetch("/process_audio", { method: "POST", body: formData });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let response = await fetch("https://myavatar-backend.onrender.com/process_audio", {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>method: "POST",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body: formData<span class="Apple-converted-space"> </span></p>
+<p class="p1">});</p>
 <p class="p1"><span class="Apple-converted-space">            </span>let audioResponse = await response.blob();</p>
 <p class="p1"><span class="Apple-converted-space">            </span>let audioURL = URL.createObjectURL(audioResponse);</p>
 <p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("audioPlayback").src = audioURL;</p>
